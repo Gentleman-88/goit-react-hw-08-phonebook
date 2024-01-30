@@ -1,0 +1,26 @@
+.filterContainer {
+    margin: 20px auto 20px;
+        width: 365px;
+        padding: 25px;
+        border: 1px solid black;
+        border-radius: 10px;
+}
+
+.filterTitle {
+    font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 20px;
+}
+
+.filterText {
+    font-weight: 600;
+        font-size: 16px;
+        padding-bottom: 10px;
+}
+
+.filterInput {
+    width: 225px;
+        border-radius: 10px;
+        border-color: gray;
+        background-color: lightgray;
+}

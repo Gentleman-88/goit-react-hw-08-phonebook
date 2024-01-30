@@ -1,0 +1,40 @@
+.form {
+    margin: 20px auto 20px;
+    width: 365px;
+    padding: 25px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.formTitle {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.formLabel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.formLabelText {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.formInput {
+    width: 300px;
+    border-radius: 10px;
+    border-color: gray;
+    background-color: lightgray;
+}
+
+.formButton {
+    border: none;
+    width: 150px;
+    height: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
