@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './ContactList.module.css'
 import { selectContacts, selectError, selectFilter, selectIsLoading } from '../../Redux/selectors';
-import { deleteContact, fetchContacts } from 'services/api';
-import { useEffect } from 'react';
 import { Loader } from 'components/Loader/Loader';
+import { removeContact } from '../../Redux/Contacts/contactReducer';
 
 const ContactList = () => {
 
@@ -15,12 +14,9 @@ const ContactList = () => {
 
 
     const handleDeleteContact = contactId => {
-        dispatch(deleteContact(contactId))
+        dispatch(removeContact(contactId))
     };
 
-    useEffect(() => {
-        dispatch(fetchContacts());
-    }, [dispatch])
 
 
     const filteredContacts = contacts.filter(contact =>
