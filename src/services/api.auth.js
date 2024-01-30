@@ -18,4 +18,14 @@ export const apiRegisterUser = createAsyncThunk('auth/apiRegisterUser', async (f
     } catch (error) {
         thunkApi.rejectWithValue(error.message)
     }
-}) 
+});
+
+export const apiLoginUser = createAsyncThunk('auth/apiLoginUser', async (formData, thunkApi) => {
+    try {
+        const { data } = await $authInstance.post('/users/login', formData);
+        setToken(data.token);
+        return data;
+    } catch (error) {
+        thunkApi.rejectWithValue(error.message);
+    }
+});

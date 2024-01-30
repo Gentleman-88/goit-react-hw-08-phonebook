@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './AddProfileForm.module.css'
 import { selectContacts } from '../../Redux/selectors';
-import { addContact } from '../../Redux/Contacts/contactReducer';
+import { addContact } from 'services/api.contacts';
 
 export const AddContactForm = () => {
 
