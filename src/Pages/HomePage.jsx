@@ -6,6 +6,7 @@ const HomePage = () => {
         <div>
             Hello
             <NavLink to='/register'>Sing up</NavLink>
+            <NavLink to='/login'>Login</NavLink>
         </div>
     )
 }

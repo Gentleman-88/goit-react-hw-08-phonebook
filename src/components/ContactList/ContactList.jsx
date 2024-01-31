@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import css from './ContactList.module.css'
 import { selectContacts, selectError, selectFilter, selectIsLoading } from '../../Redux/selectors';
 import { Loader } from 'components/Loader/Loader';
-import { deleteContact } from 'services/api.contacts';
+import { deleteContact } from 'services/api';
 
 const ContactList = () => {
 

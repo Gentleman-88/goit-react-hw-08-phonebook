@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { apiRegisterUser } from '../services/api.auth'
+import { apiRegisterUser } from '../services/api'
 
 const Register = () => {
 
