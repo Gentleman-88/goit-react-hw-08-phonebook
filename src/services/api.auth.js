@@ -7,7 +7,7 @@ export const $authInstance = axios.create({
 })
 
 const setToken = token => {
-    $authInstance.defaults.headers.common.Authorization = `Bearer ${token}`  
+    $authInstance.defaults.headers.common.Authorization = `Bearer ${token}`
 }
 
 export const apiRegisterUser = createAsyncThunk('auth/apiRegisterUser', async (formData, thunkApi) => {
