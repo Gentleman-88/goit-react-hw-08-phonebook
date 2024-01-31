@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const $contactInstance = axios.create({
+export const $contactInstance = axios.create({
     baseUrl: "https://connections-api.herokuapp.com"
 })
 
