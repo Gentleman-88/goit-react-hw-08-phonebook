@@ -16,7 +16,7 @@ export const apiRegisterUser = createAsyncThunk('auth/apiRegisterUser', async (f
         setToken(data.token)
         return data
     } catch (error) {
-        thunkApi.rejectWithValue(error.message)
+        return thunkApi.rejectWithValue(error.message)
     }
 });
 
@@ -26,7 +26,21 @@ export const apiLoginUser = createAsyncThunk('auth/apiLoginUser', async (formDat
         setToken(data.token);
         return data;
     } catch (error) {
-        thunkApi.rejectWithValue(error.message);
+        return thunkApi.rejectWithValue(error.message);
+    }
+});
+
+export const apiRefreshUser = createAsyncThunk('auth/apiRegisterUser', async (_, thunkApi) => {
+
+    const state = thunkApi.getState();
+    const token = state.auth.token
+
+    try {
+        setToken(token)
+        const { data } = await $authInstance.get('/users/current')
+        return data
+    } catch (error) {
+        return thunkApi.rejectWithValue(error.message)
     }
 });
 

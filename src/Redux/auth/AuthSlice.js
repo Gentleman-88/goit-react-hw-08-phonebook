@@ -1,5 +1,5 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { apiLoginUser, apiRegisterUser } from "services/api";
+import { apiLoginUser, apiRefreshUser, apiRegisterUser } from "services/api";
 
 
 
@@ -28,9 +28,15 @@ const authSlice = createSlice({
                 state.userData = action.payload.user;
                 state.token = action.payload.token;
             })
+            .addCase(apiRefreshUser.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isLoggedIn = true;
+                state.userData = action.payload;
+            })
             .addMatcher(
                 isAnyOf(
                     apiRegisterUser.pending,
+                    apiLoginUser.pending,
                     apiLoginUser.pending,
                 ),
                 state => {
@@ -41,6 +47,7 @@ const authSlice = createSlice({
             .addMatcher(
                 isAnyOf(
                     apiRegisterUser.rejected,
+                    apiLoginUser.rejected,
                     apiLoginUser.rejected,
                 ),
                 (state, action) => {

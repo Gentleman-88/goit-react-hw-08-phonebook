@@ -21,6 +21,7 @@ const Register = () => {
     }
 
     dispatch(apiRegisterUser(formData))
+    e.currentTarget.reset();
   }
 
 

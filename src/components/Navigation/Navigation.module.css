@@ -2,9 +2,13 @@
     height: 60px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 0 40px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navigation {
+    display: flex;
+    gap: 5px;
 }
 
 .btn {
@@ -39,6 +43,7 @@
     color: aliceblue;
     transition: box-shadow 0.3s ease-in-out;
     cursor: pointer;
+    margin-left: auto;
 }
 
 .btn_logout:hover {

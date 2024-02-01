@@ -20,6 +20,7 @@ const Login = () => {
     }
 
     dispatch(apiLoginUser(formData))
+    e.currentTarget.reset();
   }
 
 
