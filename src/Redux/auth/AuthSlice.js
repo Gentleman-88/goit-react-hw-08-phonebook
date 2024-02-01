@@ -37,7 +37,6 @@ const authSlice = createSlice({
                 isAnyOf(
                     apiRegisterUser.pending,
                     apiLoginUser.pending,
-                    apiLoginUser.pending,
                 ),
                 state => {
                     state.isLoading = true;
@@ -47,7 +46,6 @@ const authSlice = createSlice({
             .addMatcher(
                 isAnyOf(
                     apiRegisterUser.rejected,
-                    apiLoginUser.rejected,
                     apiLoginUser.rejected,
                 ),
                 (state, action) => {
