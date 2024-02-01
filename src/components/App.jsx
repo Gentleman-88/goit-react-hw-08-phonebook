@@ -14,7 +14,9 @@ export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+
     dispatch(apiRefreshUser())
+    
   }, [dispatch])
 
   return (

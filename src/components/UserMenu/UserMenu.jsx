@@ -1,9 +1,14 @@
+import { selectUserData } from 'Redux/auth/AuthSlice.selectors'
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const UserMenu = () => {
+
+    const userData = useSelector(selectUserData())
+
     return (
         <div>
-            <p>mango@mail.com</p>
+            <p>{userData.email}</p>
             <button>Logout</button>
         </div>
     )
