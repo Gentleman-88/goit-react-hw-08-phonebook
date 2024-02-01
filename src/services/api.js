@@ -30,7 +30,7 @@ export const apiLoginUser = createAsyncThunk('auth/apiLoginUser', async (formDat
     }
 });
 
-export const apiRefreshUser = createAsyncThunk('auth/apiRegisterUser', async (_, thunkApi) => {
+export const apiRefreshUser = createAsyncThunk('auth/apiRefreshUser', async (_, thunkApi) => {
 
     const state = thunkApi.getState();
     const token = state.auth.token
