@@ -1,0 +1,63 @@
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;  
+    font-size: 40px;
+    color: aliceblue;
+    font-weight: 550;
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+
+.phone_book {
+    rotate: 5deg;
+    background-color: aliceblue;
+    color: #6b705c;
+    border-radius: 7px;
+    display: flex;
+    width: 230px;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone_book:hover {
+    rotate: 0deg;
+    animation: rotateAnimation 1s ease-in-out;
+}
+
+.list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.register_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    text-decoration: none;
+    font-size: 25px;
+    border-radius: 7px;
+    font-weight: 500;
+    color: aliceblue;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.register_btn:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}

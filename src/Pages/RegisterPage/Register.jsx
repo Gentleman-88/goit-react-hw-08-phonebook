@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { apiRegisterUser } from '../services/api'
+import { apiRegisterUser } from '../../services/api'
+import css from './Register.module.css'
 
 const Register = () => {
 
@@ -25,28 +26,32 @@ const Register = () => {
 
   return (
     <div>
-      <h1>Register Page</h1>
-      <form onSubmit={onSubmit}>
-        <label>Name: </label>
+      <h1 className={css.title}>Sign In</h1>
+      <form onSubmit={onSubmit} className={css.sign_in}>
+        <label className={css.label}>Name: </label>
         <input type="text"
           name='userName'
           placeholder='Name'
           minLength={2}
           required
+          className={css.input}
         />
-        <label>Email: </label>
+        <label className={css.label}>Email: </label>
         <input type="text"
           name='userEmail'
           placeholder='yourmail@gmail.com'
           required
+          className={css.input}
         />
-        <label>Password: </label>
+        <label className={css.label}>Password: </label>
         <input type="text"
           name='userPassword'
+          placeholder='•••••••'
           minLength={7}
           required
+          className={css.input}
         />
-        <button type='submit'>Sign up</button>
+        <button type='submit' className={css.register_btn}>Sign up</button>
       </form>
     </div>
   )

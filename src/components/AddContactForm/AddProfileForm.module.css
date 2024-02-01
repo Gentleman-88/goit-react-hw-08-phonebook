@@ -1,16 +1,17 @@
 .form {
-    margin: 20px auto 20px;
-    width: 365px;
-    padding: 25px;
-    border: 1px solid black;
-    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 375px;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-.formTitle {
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 20px;
+.form:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 .formLabel {
     display: flex;
@@ -20,21 +21,50 @@
 }
 
 .formLabelText {
-    font-weight: 600;
-    font-size: 16px;
+    color: aliceblue;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 5px;
 }
 
 .formInput {
-    width: 300px;
-    border-radius: 10px;
-    border-color: gray;
-    background-color: lightgray;
+    height: 35px;
+        border-radius: 10px;
+        border-style: none;
+        padding: 0 5px;
+        color: aliceblue;
+        font-size: 13px;
+        background-color: transparent;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: box-shadow 0.3s ease-in-out;
+        margin-bottom: 15px;
+}
+
+.formInput:hover,
+.formInput:focus {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    border-style: none;
 }
 
 .formButton {
-    border: none;
+display: flex;
+    align-items: center;
+    justify-content: center;
     width: 150px;
-    height: 25px;
-    border-radius: 10px;
+    height: 40px;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 7px;
+    border-style: none;
+    font-weight: 500;
+    background-color: transparent;
+    color: aliceblue;
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    margin: 0 auto;
+}
+
+.formButton:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.10);
 }

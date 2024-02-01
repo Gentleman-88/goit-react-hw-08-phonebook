@@ -1,13 +1,23 @@
 .contactList {
-    margin: 20px auto 20px;
-        width: 365px;
-        padding: 25px;
-        border: 1px solid black;
-        border-radius: 10px;
-        display: flex;
+    display: flex;
         flex-direction: column;
+        padding: 20px;
+        justify-content: flex-start;
+        margin: 0 auto;
         gap: 10px;
-}
+        margin-bottom: 20px;
+        padding-left: 30px;
+        display: flex;
+        width: 365px;
+        border-radius: 7px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        transition: box-shadow 0.3s ease-in-out;
+    }
+    
+    .contactList:hover {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
 
 .contactListItem {
     display: flex;
@@ -16,8 +26,16 @@
 }
 
 .contactName {
-    font-weight: 600;
-        font-size: 16px;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.number {
+    color: aliceblue;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 }
 
 .deleteButton {
@@ -26,4 +44,12 @@
         height: 25px;
         border-radius: 10px;
         cursor: pointer;
+        color: aliceblue;
+        background-color: transparent;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: box-shadow 0.3s ease-in-out;
+}
+
+.deleteButton:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.10);
 }
