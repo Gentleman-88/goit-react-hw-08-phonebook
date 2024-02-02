@@ -14,7 +14,7 @@ const HomePage = () => {
             {!isLoggedin ? (
                 <>
                     <ul className={css.list}>
-                <li><NavLink to='/register' className={css.register_btn}>Sing up</NavLink></li>
+                <li><NavLink to='/register' className={css.register_btn}>Sign up</NavLink></li>
                 <li><NavLink to='/login'  className={css.register_btn}>Login</NavLink></li>
             </ul>
                 </>
