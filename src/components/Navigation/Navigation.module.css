@@ -11,6 +11,18 @@
     gap: 5px;
 }
 
+.user_box {
+    display: flex;
+    gap: 5px;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+} 
+
+.user_email {
+    color: aliceblue;
+}
+
 .btn {
     display: flex;
     align-items: center;
@@ -43,7 +55,6 @@
     color: aliceblue;
     transition: box-shadow 0.3s ease-in-out;
     cursor: pointer;
-    margin-left: auto;
 }
 
 .btn_logout:hover {

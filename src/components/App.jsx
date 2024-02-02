@@ -7,6 +7,8 @@ import HomePage from 'Pages/HomePage/HomePage';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { apiRefreshUser } from '../services/api';
+import RestrictedRoute from './RestrictedRoute/RestrictedRoute';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 export const App = () => {
@@ -23,9 +25,20 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<HomePage />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/contacts' element={<Contacts />} />
+        <Route path='/register' element={
+          <RestrictedRoute>
+            <Register />
+          </RestrictedRoute>} />
+        <Route path='/login' element={
+          <RestrictedRoute>
+            <Login />
+          </RestrictedRoute>
+        } />
+        <Route path='/contacts' element={
+          <PrivateRoute>
+            <Contacts />
+          </PrivateRoute>
+        } />
         <Route path="*" element={<Navigate to="/" />} />
       </Route>
     </Routes>
