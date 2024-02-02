@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import css from './ContactList.module.css'
 import { selectContacts, selectError, selectFilter, selectIsLoading } from '../../Redux/selectors';
 import { Loader } from 'components/Loader/Loader';
-import { deleteContact } from 'services/api';
+import { deleteContact, fetchContacts } from 'services/api';
+import { useEffect } from 'react';
 
 const ContactList = () => {
 
@@ -12,6 +13,9 @@ const ContactList = () => {
     const isLoading = useSelector(selectIsLoading);
     const error = useSelector(selectError);
 
+    useEffect(() => {
+        dispatch(fetchContacts())
+    }, [dispatch])
 
     const handleDeleteContact = contactId => {
         dispatch(deleteContact(contactId))
