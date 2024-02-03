@@ -1,6 +1,13 @@
+.title {
+    text-align: center;
+    color: aliceblue;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
 .form {
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 34px;
     width: 375px;
     padding: 20px;
     border-radius: 7px;

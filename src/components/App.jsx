@@ -5,21 +5,32 @@ import Contacts from 'Pages/ContactsPage/Contacts';
 import Navigation from './Navigation/Navigation';
 import HomePage from 'Pages/HomePage/HomePage';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { apiRefreshUser } from '../services/api';
 import RestrictedRoute from './RestrictedRoute/RestrictedRoute';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
-
+import { Loader } from './Loader/Loader';
 
 export const App = () => {
-
   const dispatch = useDispatch();
+  const [isRefreshComplete, setIsRefreshComplete] = useState(false);
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await dispatch(apiRefreshUser());
+        setIsRefreshComplete(true);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-    dispatch(apiRefreshUser())
-    
-  }, [dispatch])
+    fetchData();
+  }, [dispatch]);
+
+  if (!isRefreshComplete) {
+    return <Loader/>;
+  }
 
   return (
     <Routes>
@@ -43,4 +54,4 @@ export const App = () => {
       </Route>
     </Routes>
   );
-}
+};

@@ -41,7 +41,9 @@ export const AddContactForm = () => {
     dispatch(addContact(finalProfile))
   };
 
-    return (
+  return (
+    <>
+      <h2 className={css.title}>Here you can add and save your contacts</h2>
       <form className={css.form} onSubmit={handleFormSubmit}>
         <label className={css.formLabel}>
           <span className={css.formLabelText}>Name</span>
@@ -53,5 +55,6 @@ export const AddContactForm = () => {
         </label>
         <button className={css.formButton} type="submit">Add contact</button>
       </form>
+      </>
     );
   }

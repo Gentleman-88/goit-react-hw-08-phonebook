@@ -24,7 +24,7 @@ const ContactList = () => {
 
 
     const filteredContacts = contacts.filter(contact =>
-        contact.name.toLowerCase().includes(filter)
+        contact.name.includes(filter)
     );
 
 
@@ -49,7 +49,7 @@ const ContactList = () => {
                 }
             </ul>
             )}
-            {error && contacts.length > 0 && <h2>Oopsss...Something went wrong...</h2>}
+            {error && contacts.length > 0 && <h2 className={css.error}>Oopsss...Something went wrong...</h2>}
         </>
     );
 }
