@@ -54,6 +54,25 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.10);
 }
 
+.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    font-size: 20px;
+    font-weight: 500;
+    width: 415px;
+    height: 35px;
+    margin: 0 auto;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.empty:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.10);
+}
+
 .error {
     color: aliceblue;
     text-align: center;

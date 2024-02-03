@@ -30,26 +30,37 @@ const ContactList = () => {
 
     return (
         <>
-            {error && <h2 className={css.error}>Oopsss...Something went wrong...</h2>}
-            {isLoading && !error ? <LoaderForList /> : (
-                <ul className={css.contactList}>
-                {filteredContacts.map(contact => (
-                    <li key={contact.id}
-                        className={css.contactListItem}>
-                        <span className={css.contactName}>{contact.name}:</span>
-                        <span className={css.number}>{contact.number}</span>
-                        <button
-                            className={css.deleteButton}
-                            onClick={() => handleDeleteContact(contact.id)}
-                        >
-                            X
-                        </button>
-                    </li>
-                ))
-                }
-            </ul>
+            {error && <h2 className={css.error}>Oopsss... Something went wrong...</h2>}
+            {isLoading && !error ? (
+                <LoaderForList />
+            ) : (
+                <>
+                    {contacts.length === 0 ? (
+                        <p className={css.empty}>Your phonebook is empty. Add first contact!</p>
+                    ) : (
+                        <ul className={css.contactList}>
+                            {filteredContacts.map((contact) => (
+                                <li
+                                    key={contact.id}
+                                    className={css.contactListItem}
+                                >
+                                    <span className={css.contactName}>{contact.name}:</span>
+                                    <span className={css.number}>{contact.number}</span>
+                                    <button
+                                        className={css.deleteButton}
+                                        onClick={() => handleDeleteContact(contact.id)}
+                                    >
+                                        X
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </>
             )}
-            {error && contacts.length > 0 && <h2 className={css.error}>Oopsss...Something went wrong...</h2>}
+            {error && contacts.length > 0 && (
+                <h2 className={css.error}>Oopsss... Something went wrong...</h2>
+            )}
         </>
     );
 }
