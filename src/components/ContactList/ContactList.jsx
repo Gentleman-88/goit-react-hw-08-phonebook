@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './ContactList.module.css'
 import { selectContacts, selectError, selectFilter, selectIsLoading } from '../../Redux/selectors';
-import { Loader } from 'components/Loader/Loader';
 import { deleteContact, fetchContacts } from 'services/api';
 import { useEffect } from 'react';
+import { LoaderForList } from 'components/Loader/LoaderForList';
 
 const ContactList = () => {
 
@@ -30,8 +30,8 @@ const ContactList = () => {
 
     return (
         <>
-            {error && <h2>Oopsss...Something went wrong...</h2>}
-            {isLoading && !error ? <Loader /> : (
+            {error && <h2 className={css.error}>Oopsss...Something went wrong...</h2>}
+            {isLoading && !error ? <LoaderForList /> : (
                 <ul className={css.contactList}>
                 {filteredContacts.map(contact => (
                     <li key={contact.id}
