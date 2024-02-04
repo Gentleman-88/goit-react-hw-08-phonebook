@@ -41,6 +41,12 @@ const authSlice = createSlice({
       .addCase(apiLogoutUser.fulfilled, () => {
         return user;
       })
+      .addCase(apiRefreshUser.pending, state => {
+        state.isRefreshing = true;
+      })
+      .addCase(apiRefreshUser.rejected, state => {
+        state.isRefreshing = false;
+      })
       .addMatcher(
         isAnyOf(
           apiRegisterUser.pending,
