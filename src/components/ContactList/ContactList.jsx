@@ -1,68 +1,70 @@
 import { useDispatch, useSelector } from 'react-redux';
-import css from './ContactList.module.css'
-import { selectContacts, selectError, selectFilter, selectIsLoading } from '../../Redux/selectors';
+import css from './ContactList.module.css';
+import {
+  selectContacts,
+  selectError,
+  selectFilter,
+  selectIsLoading,
+} from '../../Redux/selectors';
 import { deleteContact, fetchContacts } from 'services/api';
 import { useEffect } from 'react';
 import { LoaderForList } from 'components/Loader/LoaderForList';
 
 const ContactList = () => {
+  const dispatch = useDispatch();
+  const filter = useSelector(selectFilter);
+  const contacts = useSelector(selectContacts);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
-    const dispatch = useDispatch()
-    const filter = useSelector(selectFilter)
-    const contacts = useSelector(selectContacts)
-    const isLoading = useSelector(selectIsLoading);
-    const error = useSelector(selectError);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
-    useEffect(() => {
-        dispatch(fetchContacts())
-    }, [dispatch])
+  const handleDeleteContact = contactId => {
+    dispatch(deleteContact(contactId));
+  };
 
-    const handleDeleteContact = contactId => {
-        dispatch(deleteContact(contactId))
-    };
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.includes(filter)
+  );
 
-
-
-    const filteredContacts = contacts.filter(contact =>
-        contact.name.includes(filter)
-    );
-
-
-    return (
+  return (
+    <>
+      {error && (
+        <h2 className={css.error}>Oopsss... Something went wrong...</h2>
+      )}
+      {isLoading && !error ? (
+        <LoaderForList />
+      ) : (
         <>
-            {error && <h2 className={css.error}>Oopsss... Something went wrong...</h2>}
-            {isLoading && !error ? (
-                <LoaderForList />
-            ) : (
-                <>
-                    {contacts.length === 0 ? (
-                        <p className={css.empty}>Your phonebook is empty. Add first contact!</p>
-                    ) : (
-                        <ul className={css.contactList}>
-                            {filteredContacts.map((contact) => (
-                                <li
-                                    key={contact.id}
-                                    className={css.contactListItem}
-                                >
-                                    <span className={css.contactName}>{contact.name}:</span>
-                                    <span className={css.number}>{contact.number}</span>
-                                    <button
-                                        className={css.deleteButton}
-                                        onClick={() => handleDeleteContact(contact.id)}
-                                    >
-                                        X
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </>
-            )}
-            {error && contacts.length > 0 && (
-                <h2 className={css.error}>Oopsss... Something went wrong...</h2>
-            )}
+          {contacts.length === 0 ? (
+            <p className={css.empty}>
+              Your phonebook is empty. Add first contact!
+            </p>
+          ) : (
+            <ul className={css.contactList}>
+              {filteredContacts.map(contact => (
+                <li key={contact.id} className={css.contactListItem}>
+                  <span className={css.contactName}>{contact.name}:</span>
+                  <span className={css.number}>{contact.number}</span>
+                  <button
+                    className={css.deleteButton}
+                    onClick={() => handleDeleteContact(contact.id)}
+                  >
+                    X
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </>
-    );
-}
+      )}
+      {error && contacts.length > 0 && (
+        <h2 className={css.error}>Oopsss... Something went wrong...</h2>
+      )}
+    </>
+  );
+};
 
 export { ContactList };

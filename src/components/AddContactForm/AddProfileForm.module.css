@@ -1,77 +1,76 @@
 .title {
-    text-align: center;
-    color: aliceblue;
-    margin-top: 20px;
-    font-size: 24px;
+  text-align: center;
+  color: aliceblue;
+  margin-top: 20px;
+  font-size: 24px;
 }
 
 .form {
-    margin: 0 auto;
-    margin-top: 34px;
-    width: 375px;
-    padding: 20px;
-    border-radius: 7px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.3s ease-in-out;
+  margin: 0 auto;
+  margin-top: 34px;
+  width: 375px;
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .form:hover {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
 .formLabel {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .formLabelText {
-    color: aliceblue;
-        font-size: 20px;
-        font-weight: 500;
-        margin-bottom: 5px;
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
 }
 
 .formInput {
-    height: 35px;
-        border-radius: 10px;
-        border-style: none;
-        padding: 0 5px;
-        color: aliceblue;
-        font-size: 13px;
-        background-color: transparent;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        transition: box-shadow 0.3s ease-in-out;
-        margin-bottom: 15px;
+  height: 35px;
+  border-radius: 10px;
+  border-style: none;
+  padding: 0 5px;
+  color: aliceblue;
+  font-size: 13px;
+  background-color: transparent;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
+  margin-bottom: 15px;
 }
 
 .formInput:hover,
 .formInput:focus {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    border-style: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  border-style: none;
 }
 
 .formButton {
-display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 150px;
-    height: 40px;
-    text-decoration: none;
-    font-size: 20px;
-    border-radius: 7px;
-    border-style: none;
-    font-weight: 500;
-    background-color: transparent;
-    color: aliceblue;
-    transition: box-shadow 0.3s ease-in-out;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 40px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 7px;
+  border-style: none;
+  font-weight: 500;
+  background-color: transparent;
+  color: aliceblue;
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  margin: 0 auto;
 }
 
 .formButton:hover {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

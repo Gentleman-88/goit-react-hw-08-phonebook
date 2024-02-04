@@ -1,15 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
-import css from './AddProfileForm.module.css'
+import css from './AddProfileForm.module.css';
 import { selectContacts } from '../../Redux/selectors';
 import { addContact } from 'services/api';
 
 export const AddContactForm = () => {
+  const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
 
-  const dispatch = useDispatch()
-  const contacts = useSelector(selectContacts)
-  
   const handleFormSubmit = event => {
-
     event.preventDefault();
 
     const name = event.currentTarget.name.value;
@@ -35,10 +33,10 @@ export const AddContactForm = () => {
 
     const finalProfile = {
       ...formData,
-      id: Math.random().toString()
-    }
+      id: Math.random().toString(),
+    };
 
-    dispatch(addContact(finalProfile))
+    dispatch(addContact(finalProfile));
   };
 
   return (
@@ -53,8 +51,10 @@ export const AddContactForm = () => {
           <span className={css.formLabelText}>Number</span>
           <input className={css.formInput} type="tel" name="number" required />
         </label>
-        <button className={css.formButton} type="submit">Add contact</button>
+        <button className={css.formButton} type="submit">
+          Add contact
+        </button>
       </form>
-      </>
-    );
-  }
+    </>
+  );
+};

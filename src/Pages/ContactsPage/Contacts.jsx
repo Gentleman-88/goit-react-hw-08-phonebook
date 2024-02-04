@@ -1,15 +1,14 @@
-import { AddContactForm, ContactList, Filter } from 'components'
-import React from 'react'
+import { AddContactForm, ContactList, Filter } from 'components';
+import React from 'react';
 
 const Contacts = () => {
+  return (
+    <div>
+      <AddContactForm />
+      <Filter />
+      <ContactList />
+    </div>
+  );
+};
 
-    return (
-        <div>
-            <AddContactForm />
-            <Filter />
-            <ContactList />
-        </div>
-    )
-}
-
-export default Contacts
+export default Contacts;
