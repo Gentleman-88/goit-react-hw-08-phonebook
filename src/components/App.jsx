@@ -10,21 +10,21 @@ import { apiRefreshUser } from '../services/api';
 import RestrictedRoute from './RestrictedRoute/RestrictedRoute';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import { Loader } from './Loader/Loader';
-import { selectUserIsLoggedIn } from '../Redux/auth/AuthSlice.selectors';
+import { selectUserIsLoading } from '../Redux/auth/AuthSlice.selectors';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector(selectUserIsLoggedIn);
+  const isLoading = useSelector(selectUserIsLoading);
 
   useEffect(() => {
     dispatch(apiRefreshUser());
   }, [dispatch]);
 
-  if (!isLoggedIn) {
-    return <Loader />;
-  }
-
-  return (
+  return isLoading ? (
+    <div>
+      <Loader />
+    </div>
+  ) : (
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<HomePage />} />
