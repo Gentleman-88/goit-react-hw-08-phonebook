@@ -4,23 +4,23 @@ import Login from 'Pages/LoginPage/Login';
 import Contacts from 'Pages/ContactsPage/Contacts';
 import Navigation from './Navigation/Navigation';
 import HomePage from 'Pages/HomePage/HomePage';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { apiRefreshUser } from '../services/api';
 import RestrictedRoute from './RestrictedRoute/RestrictedRoute';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import { Loader } from './Loader/Loader';
-import { selectUserIsLoading } from '../Redux/auth/AuthSlice.selectors';
+import { useAuth } from 'Hooks';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectUserIsLoading);
+  const { isRefreshing } = useAuth();
 
   useEffect(() => {
     dispatch(apiRefreshUser());
   }, [dispatch]);
 
-  return isLoading ? (
+  return isRefreshing ? (
     <div>
       <Loader />
     </div>

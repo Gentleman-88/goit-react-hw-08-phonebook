@@ -12,6 +12,7 @@ const user = {
   isLoggedIn: false,
   error: null,
   isLoading: false,
+  isRefreshing: false,
 };
 
 const authSlice = createSlice({
@@ -35,6 +36,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.isLoggedIn = true;
         state.userData = action.payload;
+        state.isRefreshing = false;
       })
       .addCase(apiLogoutUser.fulfilled, () => {
         return user;
